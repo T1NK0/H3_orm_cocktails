@@ -8,6 +8,8 @@ namespace Cocktail.Domain
 {
     public class Drink : Parent
     {
+        //Adds 3 extra lists to our drink class, but it still inherits from the parent class to have "Id, name, and type"
+        //It's in lists as it can have multiple entitys in it.
         private List<Ingredient> _ingredients;
         private List<Accessory> _accessories;
         private List<Alcohol> _alcohols;

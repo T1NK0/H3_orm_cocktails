@@ -13,20 +13,25 @@ namespace ConsoleApp
         {
             context.Database.EnsureCreated();
 
-            BloodyMarry();
-            ScrewDriver();
-            TequilaSunrise();
+            //Can be copied in and out depending on if you need to add the drinks again or just print the cocktails.
+            //BloodyMarry();
+            //ScrewDriver();
+            //TequilaSunrise();
 
             loadDrinks();
+
+            Console.WriteLine("Exiting program");
         }
 
         private static void loadDrinks()
         {
+            //Gets our data from the database and puts it into the following lists
             var drinks = context.Drinks.ToList();
             var alcohols = context.Alcohols.ToList();
             var ingredients = context.Alcohols.ToList();
             var accesories = context.Accessories.ToList();
 
+            //Prints the different drinks we have from the lists
             foreach (var drink in drinks)
             {
                 Console.WriteLine("Drink name: " + drink.Name);
@@ -53,6 +58,7 @@ namespace ConsoleApp
             }
         }
 
+        //Contains the info of a drink, and has add function at the end, to save it to the database
         private static void BloodyMarry()
         {
             Drink bloodyMary = new Drink();
@@ -64,7 +70,8 @@ namespace ConsoleApp
             context.Add(bloodyMary);
             context.SaveChanges();
         }
-        
+
+        //Contains the info of a drink, and has add function at the end, to save it to the database
         private static void ScrewDriver()
         {
             Drink screwdriver = new Drink();
@@ -77,6 +84,7 @@ namespace ConsoleApp
             context.SaveChanges();
         }
 
+        //Contains the info of a drink, and has add function at the end, to save it to the database
         private static void TequilaSunrise()
         {
             Drink tequilaSunrise = new Drink();
